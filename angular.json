@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-joystick-demo": {
+    "ngx-joystick": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,19 +13,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-joystick-demo",
+            "outputPath": "dist/ngx-joystick",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -61,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-joystick-demo:build"
+            "browserTarget": "ngx-joystick:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-joystick-demo:build:production"
+              "browserTarget": "ngx-joystick:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-joystick-demo:build"
+            "browserTarget": "ngx-joystick:build"
           }
         },
         "test": {
@@ -82,13 +77,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
@@ -96,11 +86,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-joystick-demo:serve"
+            "devServerTarget": "ngx-joystick:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-joystick-demo:serve:production"
+              "devServerTarget": "ngx-joystick:serve:production"
             }
           }
         }
@@ -117,13 +107,13 @@
           "options": {
             "tsConfig": "projects/ngx-joystick/tsconfig.lib.json",
             "project": "projects/ngx-joystick/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/ngx-joystick/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
