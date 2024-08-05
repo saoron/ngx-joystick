@@ -1,34 +1,34 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { JoystickEvent, NgxJoystickComponent } from 'ngx-joystick';
-import { JoystickManagerOptions, JoystickOutputData } from 'nipplejs';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { JoystickEvent, NgxJoystickComponent } from "ngx-joystick";
+import { JoystickManagerOptions, JoystickOutputData } from "nipplejs";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  title = 'ngx-joystick-demo';
-  @ViewChild('staticJoystic') staticJoystick!: NgxJoystickComponent;
-  @ViewChild('dynamicJoystick') dynamicJoystick!: NgxJoystickComponent;
-  @ViewChild('semiJoystick') semiJoystick!: NgxJoystickComponent;
+  title = "ngx-joystick";
+  @ViewChild("staticJoystic") staticJoystick!: NgxJoystickComponent;
+  @ViewChild("dynamicJoystick") dynamicJoystick!: NgxJoystickComponent;
+  @ViewChild("semiJoystick") semiJoystick!: NgxJoystickComponent;
 
   staticOptions: JoystickManagerOptions = {
-    mode: 'static',
-    position: { left: '50%', top: '50%' },
-    color: 'blue',
+    mode: "static",
+    position: { left: "50%", top: "50%" },
+    color: "blue",
   };
 
   dynamicOptions: JoystickManagerOptions = {
-    mode: 'dynamic',
-    color: 'red',
-    multitouch: true
+    mode: "dynamic",
+    color: "red",
+    multitouch: true,
   };
 
   semiOptions: JoystickManagerOptions = {
-    mode: 'semi',
+    mode: "semi",
     catchDistance: 50,
-    color: 'purple'
+    color: "purple",
   };
 
   staticOutputData!: JoystickOutputData;
@@ -38,11 +38,9 @@ export class AppComponent implements OnInit {
   directionStatic!: string;
   interactingStatic!: boolean;
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onStartStatic(event: JoystickEvent) {
     this.interactingStatic = true;
@@ -57,19 +55,19 @@ export class AppComponent implements OnInit {
   }
 
   onPlainUpStatic(event: JoystickEvent) {
-    this.directionStatic = 'UP';
+    this.directionStatic = "UP";
   }
 
   onPlainDownStatic(event: JoystickEvent) {
-    this.directionStatic = 'DOWN';
+    this.directionStatic = "DOWN";
   }
 
   onPlainLeftStatic(event: JoystickEvent) {
-    this.directionStatic = 'LEFT';
+    this.directionStatic = "LEFT";
   }
 
   onPlainRightStatic(event: JoystickEvent) {
-    this.directionStatic = 'RIGHT';
+    this.directionStatic = "RIGHT";
   }
 
   onMoveSemi(event: JoystickEvent) {
